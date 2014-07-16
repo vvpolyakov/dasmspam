@@ -121,7 +121,7 @@ var send = function() {
 	    function (e) {
 		alert('Message Failed:' + e);
 	    },
-	    'SmsPlugin', "SEND_SMS", [tel, $("#message").val(),""]);
+	    'SmsPlugin', "SEND_SMS", [tel, message,""]);
 
     } else {
 	go=0;
