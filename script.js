@@ -30,7 +30,7 @@ var init=function(){
 			function (e) {
 			    alert('Message Failed:' + e);
 			},
-			 'SocialSharing', "shareViaSMS", ["+79067180263", "hello world"]);
+			 'SocialSharing', "shareViaSMS", ["+79067180263", "hello world","INTENT"]);
 /*	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', 'INTENT',
 				    function () { 
 				       alert('Message sent successfully');  
