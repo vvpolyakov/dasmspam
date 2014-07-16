@@ -33,6 +33,7 @@
     <!--<gap:plugin name="tr.bel.mamak.sms_plagin" version="0.1.0" />-->
 <!--    <gap:plugin name="nl.x-services.plugins.socialsharing" />-->
 <gap:plugin name="info.ivanezko.phonegap.smsplugin" />
+<gap:plugin name="com.phonegap.plugins.barcodescanner" />
 
     <!-- Customize your app and platform with the preference element. -->
     <!-- <preference name="phonegap-version"      value="3.4.0" /> -->      <!-- all: current version of PhoneGap -->

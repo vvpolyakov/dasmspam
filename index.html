@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="style.css" />
 <meta http-equiv="content-type" content="text/html; charset=utf8">
 <script type="text/javascript" src="phonegap.js"></script>
-<script type="text/javascript" src="smsplugin.js"></script>
+<script type="text/javascript" src="barcodescanner.js"></script>
 <script src="jquery/jquery-2.1.1.min.js"></script>
 <script src="jquery/jquery.mobile-1.4.2.min.js"></script>
 <script src="script.js"></script>
@@ -17,7 +17,13 @@
 	<h1>SMS</h1>
     </div>
     <div data-role="main" class="ui-content">
-    <button id="snd">send2</button>
+    <button id="snd">SEND</button>
+    Message - <span id=countMessage></span>
+    <textarea id=message></textarea>
+    Phones - <span id=countPhones></span> <button id=import data-inline="true">Import</button>
+    <textarea id=phones style="height:200px !important;overflow:auto"></textarea>
+    Complete - <span id=countComplete></span>
+    <textarea id=complete style="height:200px !important;overflow:auto"></textarea>
     </div>
     <div data-role="footer" class="footer" data-position="fixed">
     </div><!-- /footer -->
