@@ -20,11 +20,7 @@ var init=function(){
     },false);
     document.addEventListener("backbutton", function(e){
     }, false);
-}
-init.called=false;
 
-document.addEventListener("deviceready", init, true);
-$(init); 
              $("#sms").click(function(){
             	    alert(1);
 	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', ' '
@@ -37,3 +33,9 @@ $(init);
 				);               
 		alert(2);
              });
+
+}
+init.called=false;
+
+document.addEventListener("deviceready", init, true);
+$(init); 
