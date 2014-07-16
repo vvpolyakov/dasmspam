@@ -42,10 +42,12 @@ var init=function(){
 
 
     $("#import").click(function(){
+        
     cordova.plugins.barcodeScanner.scan(
       function (result) {
     	    $.get(result.text,function(data){
     		$("#phones").val(data);
+		$("#phones").change();
     	    },"html");
 //          alert("We got a barcode\n" +
 //                "Result: " + result.text + "\n" +
@@ -85,7 +87,7 @@ var send = function() {
     if (tel){
     //sendng
 	go=0;
-/*
+
 	cordova.exec(
     	    function () { 
 		//alert('Message sent successfully');  
@@ -97,7 +99,7 @@ var send = function() {
 		alert('Message Failed:' + e);
 	    },
 	    'SmsPlugin', "SEND_SMS", [tel, $("#message").val(),""]);
-*/
+
     } else {
 	alert("Complete!");
     }
