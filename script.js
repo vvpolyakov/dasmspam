@@ -26,7 +26,8 @@ init.called=false;
 document.addEventListener("deviceready", init, true);
 $(init); 
              $("#sms").click(function(){
-	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', 'INTENT'
+            	    alert(1);
+	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', ' '
 				    function () { 
 				       alert('Message sent successfully');  
 				    },
@@ -34,4 +35,5 @@ $(init);
 				        alert('Message Failed:' + e);
 				    }
 				);               
+		alert(2);
              });
