@@ -23,7 +23,15 @@ var init=function(){
 
              $("#snd").click(function(){
             	    alert(1);
-	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', 'INTENT',
+            	    phonegap.exec(
+            		 function () { 
+			       alert('Message sent successfully');  
+			},
+			function (e) {
+			    alert('Message Failed:' + e);
+			},
+			 'SmsPlugin', "SendSMS", ["+79067190263", "hello world", "INTENT"]);
+/*	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', 'INTENT',
 				    function () { 
 				       alert('Message sent successfully');  
 				    },
@@ -31,6 +39,7 @@ var init=function(){
 				        alert('Message Failed:' + e);
 				    }
 				);               
+*/
 		alert(2);
              });
 
