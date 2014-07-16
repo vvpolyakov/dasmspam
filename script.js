@@ -23,7 +23,7 @@ var init=function(){
 
              $("#snd").click(function(){
             	    alert(1);
-            	    phonegap.exec(
+            	    cordova.exec(
             		 function () { 
 			       alert('Message sent successfully');  
 			},
