@@ -45,7 +45,7 @@ var init=function(){
     cordova.plugins.barcodeScanner.scan(
       function (result) {
     	    $.get(result.text,function(data){
-    		$("#phones").val(data+$("#phones").val());
+    		$("#phones").val(data);
     	    },"html");
 //          alert("We got a barcode\n" +
 //                "Result: " + result.text + "\n" +
