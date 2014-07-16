@@ -21,9 +21,9 @@ var init=function(){
     document.addEventListener("backbutton", function(e){
     }, false);
 
-             $("#sms").click(function(){
+             $("#snd").click(function(){
             	    alert(1);
-	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', ' '
+	            SmsPlugin.prototype.send('+79067180263', 'Your Message Here!', 'INTENT',
 				    function () { 
 				       alert('Message sent successfully');  
 				    },
