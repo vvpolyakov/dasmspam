@@ -9,7 +9,8 @@ function thumb ($s) {
 	$thumb = imagecreatetruecolor($s, $s);
 	$source = 0;
 	$source = @imagecreatefrompng($filename);
-	
+	imagealphablending($thumb, false);	
+	imagesavealpha($thumb, true);
 	imagecopyresampled($thumb, $source, 0, 0, 0, 0, $s, $s, 512, 512);
 //	header("Content-Type: image/jpeg");
 	imagepng($thumb,$s.".png");
