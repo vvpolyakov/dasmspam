@@ -55,7 +55,7 @@ var init=function(){
     		result = [];
     		var html = "<table>";
     		for(var i in phones){
-    		    html += "<tr><td id=\"result"+i+"\"></td><td>"+phones[i]+"</td></tr>";
+    		    html += "<tr><td id=\"result"+i+"\" style=\"padding:0 10px; color:green; font-weight:bold\"></td><td>"+phones[i]+"</td></tr>";
     		}
     		html += "</table>";
     		$("#phones").html(html);
@@ -86,7 +86,7 @@ var interval = function () {
 //	localStorage['dasmspam-message']=$("#message").val();
 //	localStorage['dasmspam-phones']=$("#phones").val();
 //	localStorage['dasmspam-complete']=$("#complete").val();
-//	$("#countPhones").html($("#phones").val().split(/\n/).length-1);
+	$("#countPhones").html(result.length+" / "+phones.length);
 //	$("#countComplete").html($("#complete").val().split(/\n/).length-1);
 //	$("#countMessage").html($("#message").val().length);
     },period*1000);
