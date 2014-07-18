@@ -29,7 +29,7 @@ var init=function(){
 //    document.addEventListener("backbutton", function(e){
 //    }, false);
 
-    //localStorage['dasmspam']);
+    console.log(localStorage['dasmspam']);
     imprt(JSON.parse(localStorage['dasmspam'] ?localStorage['dasmspam']:"{}" ));
     
     $("#snd").click(function(){go=1});
@@ -37,7 +37,7 @@ var init=function(){
 
     $("#import").click(function(){
     $.mobile.loading( "show", {
-      text: "foo",
+      text: "loading...",
         textVisible: true,
           theme: "z",
             html: ""
