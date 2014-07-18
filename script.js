@@ -32,7 +32,10 @@ var init=function(){
     console.log(localStorage['dasmspam']);
     imprt(JSON.parse(localStorage['dasmspam'] ?localStorage['dasmspam']:"{}" ));
     
-    $("#snd").click(function(){go=1});
+    $("#snd").click(function(){
+	if (go) {$(this).html("START"); go=0;}
+	else {$(this).html("STOP"); go=1;}
+    });
 
 
     $("#import").click(function(){
@@ -123,5 +126,6 @@ var send = function() {
     } else {
 	go=0;
 	alert("Complete!");
+	$("#snd").html("START");
     }
 }
