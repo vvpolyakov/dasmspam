@@ -29,41 +29,25 @@ var init=function(){
 //    document.addEventListener("backbutton", function(e){
 //    }, false);
 
+    //localStorage['dasmspam']);
+    imprt(JSON.parse(localStorage['dasmspam'] ?localStorage['dasmspam']:"{}" ));
+    
     $("#snd").click(function(){go=1});
-/*
-             $("#snd").click(function(){
-            	    cordova.exec(
-            		 function () { 
-			       alert('Message sent successfully');  
-			},
-			function (e) {
-			    alert('Message Failed:' + e);
-			},
-			 'SmsPlugin', "SEND_SMS", ["+79067180263", "hello world",""]);
-             });
-*/
 
 
     $("#import").click(function(){
-            
+    $.mobile.loading( "show", {
+      text: "foo",
+        textVisible: true,
+          theme: "z",
+            html: ""
+            });
     cordova.plugins.barcodeScanner.scan(
       function (result) {
     	    $.get(result.text,function(data){
-    		$("#message").html(data.message);
-    		message = data.message;
-    		phones = data.phones.split(/\n/);
-    		result = [];
-    		var html = "<table>";
-    		for(var i in phones){
-    		    html += "<tr><td id=\"result"+i+"\" style=\"padding:0 10px; color:green; font-weight:bold\"></td><td>"+phones[i]+"</td></tr>";
-    		}
-    		html += "</table>";
-    		$("#phones").html(html);
+    		$.mobile.loading().hide();
+    		imprt(data);
     	    },"json");
-//          alert("We got a barcode\n" +
-//                "Result: " + result.text + "\n" +
-//                "Format: " + result.format + "\n" +
-//                "Cancelled: " + result.cancelled);
       }, 
       function (error) {
           alert("Scanning failed: " + error);
@@ -79,17 +63,30 @@ init.called=false;
 document.addEventListener("deviceready", init, true);
 $(init); 
 
+
 var interval = function () {
     setTimeout(function(){
 	interval();
 	if (go)send();
-//	localStorage['dasmspam-message']=$("#message").val();
-//	localStorage['dasmspam-phones']=$("#phones").val();
-//	localStorage['dasmspam-complete']=$("#complete").val();
+	localStorage['dasmspam']=JSON.stringify({message:message,result:result,phones:phones});
 	$("#countPhones").html(result.length+" / "+phones.length);
 //	$("#countComplete").html($("#complete").val().split(/\n/).length-1);
 //	$("#countMessage").html($("#message").val().length);
     },period*1000);
+}
+
+var imprt = function(data) {
+	$("#message").html(data.message);
+	message = data.message?data.message :"";
+    	phones = typeof (data.phones) == 'string'?data.phones.split(/\n/):typeof(data.phones)=='object'?data.phones:[];
+    	result = typeof (data.result) == 'object'?data.result: [];
+    	var html = "<table>";
+    	for(var i in phones){
+    	    html += "<tr><td id=\"result"+i+"\" style=\"padding:0 10px; color:green; font-weight:bold\">"+(result[i]?"OK":"")+"</td><td>"+phones[i]+"</td></tr>";
+    	}
+    	html += "</table>";
+    	$("#phones").html(html);
+
 }
 
 var send = function() {
