@@ -27,7 +27,7 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions" value="none" />
+    <!-- <preference name="permissions" value="none" /> -->
    <!-- <uses-permission android:name="android.permission.SEND_SMS" />
 -->
 <!--    <gap:plugin name="info.asankan.phonegap.smsplugin" version="0.1.0" />-->
@@ -38,10 +38,10 @@
     <gap:plugin name="com.phonegap.plugins.barcodescanner" />
 
 -->
-    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+   
     
-<!--     <plugin name="phonegap-plugin-barcodescanner" />
- -->     
+    <plugin name="phonegap-plugin-barcodescanner" />
+   
     <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" source="git" />
  
     <!-- Customize your app and platform with the preference element. -->
