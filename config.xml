@@ -38,9 +38,9 @@
     <gap:plugin name="com.phonegap.plugins.barcodescanner" />
 
 -->
-   
-    
-    <plugin name="phonegap-plugin-barcodescanner" />
+   <plugin name="com.phonegap.plugins.barcodescanner" spec="2.0.0" source="pgb" />
+    <!-- 
+    <plugin name="phonegap-plugin-barcodescanner" /> -->
    
     <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" source="git" />
  
