@@ -45,17 +45,19 @@ var init = function() {
             theme: "z",
             html: ""
         });*/
-        cordova.plugins.barcodeScanner.scan(
-            function(result) {
-                $.get(result.text, function(data) {
-                 //   $.mobile.loading().hide();
-                    imprt(data);
-                }, "json");
-            },
-            function(error) {
-                alert("Scanning failed: " + error);
-            }
-        );
+        try{
+            cordova.plugins.barcodeScanner.scan(
+                function(result) {
+                    $.get(result.text, function(data) {
+                     //   $.mobile.loading().hide();
+                        imprt(data);
+                    }, "json");
+                },
+                function(error) {
+                    alert("Scanning failed: " + error);
+                }
+            );
+        } catch(e) {alert(e);}
     });
 
 
