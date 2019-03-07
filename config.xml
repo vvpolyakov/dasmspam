@@ -29,7 +29,7 @@
     -->
     <preference name="permissions" value="none" />
    <!-- <uses-permission android:name="android.permission.SEND_SMS" />
-
+-->
 <!--    <gap:plugin name="info.asankan.phonegap.smsplugin" version="0.1.0" />-->
     <!--<gap:plugin name="tr.bel.mamak.sms_plagin" version="0.1.0" />-->
 <!--    <gap:plugin name="nl.x-services.plugins.socialsharing" />-->
@@ -40,7 +40,7 @@
 
     <plugin name="phonegap-plugin-barcodescanner" />
      <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" source="git" />
- 
+ -->
     <!-- Customize your app and platform with the preference element. -->
     <!-- <preference name="phonegap-version"      value="3.4.0" /> -->      <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
