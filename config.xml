@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.dasmspam"
-        version   = "1.0.1">
+        version   = "1.0.2">
 
     <name>Dasmspam</name>
 
@@ -27,7 +27,7 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions"                value="none"/>
+    <preference name="permissions" value="none" />
    <!-- <uses-permission android:name="android.permission.SEND_SMS" />
 
 <!--    <gap:plugin name="info.asankan.phonegap.smsplugin" version="0.1.0" />-->
@@ -39,8 +39,8 @@
 
 -->
     <plugin name="phonegap-plugin-barcodescanner" />
-<!--     <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" source="git" />
- -->
+     <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" source="git" />
+ 
     <!-- Customize your app and platform with the preference element. -->
     <!-- <preference name="phonegap-version"      value="3.4.0" /> -->      <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
@@ -66,7 +66,7 @@
 
     <!-- Define app icon for each platform. -->
     <icon src="icons/128.png" />
--
+
     <icon src="icons/36.png"   	gap:platform="android"    gap:density="ldpi" />
     <icon src="icons/48.png"   	gap:platform="android"    gap:density="mdpi" />
     <icon src="icons/72.png"   	gap:platform="android"    gap:density="hdpi" />
