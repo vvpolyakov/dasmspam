@@ -16,13 +16,7 @@
         DasIch Team
     </author>
 <!-- <uses-permission android:name="android.permission.SEND_SMS" /> -->
-    <platform name="android">
-
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-feature android:name="android.permission.SEND_SMS" android:required="true" />
-        </config-file>
-
-    </platform>
+  
     <!--
         Enable individual API permissions here.
         The "device" permission is required for the 'deviceready' event.
@@ -50,7 +44,7 @@
     <plugin name="phonegap-plugin-barcodescanner" /> -->
     <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" source="git" />
 
-    <plugin name="phonegap-plugin-barcodescanner" spec="6.0.5"/>
+    <plugin name="phonegap-plugin-barcodescanner" spec="5.0.0"/>
 
 <!--     <plugin name="com.phonegap.plugins.barcodescanner" spec="https://github.com/phonegap/phonegap-plugin-barcodescanner.git" source="git" />
  --> 
@@ -68,8 +62,8 @@
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
-    <preference name="android-targetSdkVersion"      value="28" />
-    <preference name="android-minSdkVersion"      value="28" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-targetSdkVersion"      value="26" />
+    <preference name="android-minSdkVersion"      value="26" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- Plugins can also be added here. -->
