@@ -155,18 +155,34 @@ var send = function() {
 
 //alert(tel);
         //result[i] = 2;
-        sms.send(tel, message, options,
-            function() {
-                //alert("ok");
-                result[i] = 1;
-                $("#result" + i).html("OK");
-                go = 1;
-            },
-            function(e) {
-                alert('Message Failed:' + e);
+
+
+     
+        var success = function (hasPermission) {
+            if (hasPermission) {
+                sms.send(tel, message, options,
+                    function() {
+                        //alert("ok");
+                        result[i] = 1;
+                        $("#result" + i).html("OK");
+                        go = 1;
+                    },
+                    function(e) {
+                        alert('Message Failed:' + e);
+                    }
+                );
+            }   
+            else {
+                // show a helpful message to explain why you need to require the permission to send a SMS
+                // read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
             }
-        );
-        }   catch(e) {alert(e);}
+        };
+        var error = function (e) { alert('Something went wrong:' + e); };
+        sms.hasPermission(success, error);
+        
+
+
+        }catch(e) {alert(e);}
         /*
     cordova.exec(
             function () { 
