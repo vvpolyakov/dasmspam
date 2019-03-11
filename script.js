@@ -21,13 +21,6 @@ var init = function() {
     init.called = true;
 
 
-                sms.requestPermission(function() {
-                    alert('[OK] Permission accepted')
-                }, function(error) {
-                    alert('[WARN] Permission not accepted'+error)
-                    // Handle permission not accepted
-                })
-
     //    $("#message").val(localStorage['dasmspam-message']);
     //    $("#phones").val(localStorage['dasmspam-phones']);
     //    $("#complete").val(localStorage['dasmspam-complete']);
