@@ -113,7 +113,7 @@ var send = function() {
     }
     if (tel) {
         //sendng
-        //  go=0;
+        go=0;
 
 
         try {
@@ -147,9 +147,10 @@ var send = function() {
         };
 
 //alert(tel);
+        //result[i] = 2;
         sms.send(tel, message, options,
             function() {
-                alert("ok");
+                //alert("ok");
                 result[i] = 1;
                 $("#result" + i).html("OK");
                 go = 1;
