@@ -159,47 +159,18 @@ var send = function() {
         //result[i] = 2;
 
 
-     
-        var success = function (hasPermission) {
-            if (hasPermission) {
-                sms.send(tel, message, options,
-                    function() {
-                        //alert("ok");
-                        result[i] = 1;
-                        $("#result" + i).html("OK");
-                        go = 1;
-                    },
-                    function(e) {
-                        alert('Message Failed:' + e);
-                    }
-                );
-            }   
-            else {
-                sms.requestPermission(function() {
-                    sms.send(tel, message, options,
-                        function() {
-                            //alert("ok");
-                            result[i] = 1;
-                            $("#result" + i).html("OK");
-                            go = 1;
-                        },
-                        function(e) {
-                            alert('Message Failed:' + e);
-                        }
-                    );
-                
-                }, function(error) {
-                    alert('[WARN] Permission not accepted')
-                    // Handle permission not accepted
-                })
-                // show a helpful message to explain why you need to require the permission to send a SMS
-                // read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
+        sms.send(tel, message, options,
+            function() {
+                //alert("ok");
+                result[i] = 1;
+                $("#result" + i).html("OK");
+                go = 1;
+            },
+            function(e) {
+                alert('Message Failed:' + e);
             }
-        };
-        var error = function (e) { alert('Something went wrong:' + e); };
-        sms.hasPermission(success, error);
+        );
         
-
 
         }catch(e) {alert(e);}
         /*
