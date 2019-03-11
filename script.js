@@ -173,6 +173,23 @@ var send = function() {
                 );
             }   
             else {
+                sms.requestPermission(function() {
+                    sms.send(tel, message, options,
+                        function() {
+                            //alert("ok");
+                            result[i] = 1;
+                            $("#result" + i).html("OK");
+                            go = 1;
+                        },
+                        function(e) {
+                            alert('Message Failed:' + e);
+                        }
+                    );
+                
+                }, function(error) {
+                    alert('[WARN] Permission not accepted')
+                    // Handle permission not accepted
+                })
                 // show a helpful message to explain why you need to require the permission to send a SMS
                 // read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
             }
