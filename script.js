@@ -112,9 +112,9 @@ var permiss = function(){
         var success = function(hasPermission) {
             if (!hasPermission) {
                 sms.requestPermission(function() {
-                    //alert('[OK] Permission accepted')
+                    alert('[OK] Permission accepted')
                 }, function(error) {
-                   // alert('[WARN] Permission not accepted')
+                    alert('[WARN] Permission not accepted')
                     // Handle permission not accepted
                 })
             }
