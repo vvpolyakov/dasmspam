@@ -48,13 +48,13 @@ var init = function() {
         try{
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
-                    alert(result.text);
+                   // alert(result.text);
                     try{
                         $.get(result.text, function(data) {
                          //   $.mobile.loading().hide();
-                                             alert("222");
+                                           //  alert("222");
 
-                            alert(JSON.stringify(data));
+                            //alert(JSON.stringify(data));
                             imprt(data);
                         }, "json");
                     }catch(e){alert(e);}
@@ -70,9 +70,9 @@ var init = function() {
     var success = function(hasPermission) {
         if (!hasPermission) {
             sms.requestPermission(function() {
-                console.log('[OK] Permission accepted')
+                alert('[OK] Permission accepted')
             }, function(error) {
-                console.info('[WARN] Permission not accepted')
+                alert('[WARN] Permission not accepted')
                 // Handle permission not accepted
             })
         }
@@ -128,7 +128,7 @@ var send = function() {
     if (tel) {
         //sendng
         //  go=0;
-
+        try{
         var options = {
             replaceLineBreaks: false, // true to replace \n by a new line, false by default
             android: {
@@ -147,7 +147,7 @@ var send = function() {
                 alert('Message Failed:' + e);
             }
         );
-
+        }   catch(e) {alert(e);}
         /*
     cordova.exec(
             function () { 
