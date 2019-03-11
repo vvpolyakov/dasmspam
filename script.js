@@ -48,7 +48,7 @@ var init = function() {
         try{
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
-                    alert("111");
+                    alert(result.text);
                     try{
                         $.get(result.text, function(data) {
                          //   $.mobile.loading().hide();
