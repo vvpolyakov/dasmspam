@@ -66,6 +66,7 @@ var init = function() {
         } catch(e) {alert("!!!!"+e);}
     });
 
+    try {
 
     var success = function(hasPermission) {
         if (!hasPermission) {
@@ -80,6 +81,7 @@ var init = function() {
     var error = function(e) { alert('Something went wrong:' + e); };
     sms.hasPermission(success, error);
 
+    catch(e) {alert(e);}
 
 
     interval();
