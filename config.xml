@@ -42,7 +42,7 @@
     <plugin name="phonegap-plugin-barcodescanner" /> -->
    
     <plugin name="cordova-sms-plugin" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" source="git" />
-    <plugin name="phonegap-plugin-barcodescanner"  spec="https://github.com/phonegap/phonegap-plugin-barcodescanner.git" source="git" />
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
  
     <!-- Customize your app and platform with the preference element. -->
     <!-- <preference name="phonegap-version"      value="3.4.0" /> -->      <!-- all: current version of PhoneGap -->
