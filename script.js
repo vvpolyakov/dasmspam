@@ -80,7 +80,7 @@ var init = function() {
     };
     var error = function(e) { alert('Something went wrong:' + e); };
     sms.hasPermission(success, error);
-
+}
     catch(e) {alert(e);}
 
 
