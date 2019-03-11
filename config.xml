@@ -28,9 +28,9 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-  <!--   <preference name="permissions" value="none" /> 
+    <preference name="permissions" value="none" /> 
     <uses-permission android:name="android.permission.SEND_SMS" />
- -->
+ 
 <!--    <gap:plugin name="info.asankan.phonegap.smsplugin" version="0.1.0" />-->
     <!--<gap:plugin name="tr.bel.mamak.sms_plagin" version="0.1.0" />-->
 <!--    <gap:plugin name="nl.x-services.plugins.socialsharing" />-->
