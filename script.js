@@ -50,6 +50,7 @@ var init = function() {
                 function(result) {
                     $.get(result.text, function(data) {
                      //   $.mobile.loading().hide();
+                        alert(JSON.stringify(data));
                         imprt(data);
                     }, "json");
                 },
