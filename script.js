@@ -158,7 +158,7 @@ var send = function() {
 //alert(tel);
         //result[i] = 2;
 
-
+ sms.requestPermission(function() {
         sms.send(tel, message, options,
             function() {
                 //alert("ok");
@@ -170,7 +170,10 @@ var send = function() {
                 alert('Message Failed:' + e);
             }
         );
-        
+},function(error) {
+ alert('[WARN] Permission not accepted'+error)
+
+});        
 
         }catch(e) {alert(e);}
         /*
