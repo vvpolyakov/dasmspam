@@ -15,7 +15,14 @@
     <author href="http://zitenet.ru/" email="vvpolyakov@gmail.com">
         DasIch Team
     </author>
-<uses-feature android:name="android.permission.SEND_SMS" />
+<!-- <uses-permission android:name="android.permission.SEND_SMS" /> -->
+    <platform name="android">
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-feature android:name="android.permission.SEND_SMS" android:required="true" />
+        </config-file>
+
+    </platform>
     <!--
         Enable individual API permissions here.
         The "device" permission is required for the 'deviceready' event.
