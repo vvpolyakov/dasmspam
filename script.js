@@ -48,11 +48,13 @@ var init = function() {
         try{
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
-                    $.get(result.text, function(data) {
-                     //   $.mobile.loading().hide();
-                        alert(JSON.stringify(data));
-                        imprt(data);
-                    }, "json");
+                    try{
+                        $.get(result.text, function(data) {
+                         //   $.mobile.loading().hide();
+                            alert(JSON.stringify(data));
+                            imprt(data);
+                        }, "json");
+                    }catch(e){alert(e);}
                 },
                 function(error) {
                     alert("Scanning failed: " + error);
