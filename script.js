@@ -57,7 +57,7 @@ var init = function() {
                     alert("Scanning failed: " + error);
                 }
             );
-        } catch(e) {alert(e);}
+        } catch(e) {alert("!!!!"+e);}
     });
 
 
