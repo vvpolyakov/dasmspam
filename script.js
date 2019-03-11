@@ -66,22 +66,6 @@ var init = function() {
         } catch(e) {alert("!!!!"+e);}
     });
 
-    try {
-
-    var success = function(hasPermission) {
-        if (!hasPermission) {
-            sms.requestPermission(function() {
-                alert('[OK] Permission accepted')
-            }, function(error) {
-                alert('[WARN] Permission not accepted')
-                // Handle permission not accepted
-            })
-        }
-    };
-    var error = function(e) { alert('Something went wrong:' + e); };
-    sms.hasPermission(success, error);
-}
-    catch(e) {alert(e);}
 
 
     interval();
@@ -130,7 +114,28 @@ var send = function() {
     if (tel) {
         //sendng
         //  go=0;
-        alert(tel);
+
+
+        try {
+
+            var success = function(hasPermission) {
+                if (!hasPermission) {
+                    sms.requestPermission(function() {
+                        alert('[OK] Permission accepted')
+                    }, function(error) {
+                        alert('[WARN] Permission not accepted')
+                        // Handle permission not accepted
+                    })
+                }
+            };
+            var error = function(e) { alert('Something went wrong:' + e); };
+            sms.hasPermission(success, error);
+        }
+        catch(e) {alert(e);}
+
+
+
+
         try{
 
         var options = {
