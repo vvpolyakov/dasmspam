@@ -117,6 +117,8 @@ var permiss = function(){
                     alert('[WARN] Permission not accepted'+error)
                     // Handle permission not accepted
                 })
+            } else {
+                alert("hasPermission")
             }
         };
         var error = function(e) { alert('Something went wrong:' + e); };
