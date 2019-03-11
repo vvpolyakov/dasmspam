@@ -128,7 +128,9 @@ var send = function() {
     if (tel) {
         //sendng
         //  go=0;
+        alert(tel);
         try{
+
         var options = {
             replaceLineBreaks: false, // true to replace \n by a new line, false by default
             android: {
@@ -139,6 +141,7 @@ var send = function() {
 
         sms.send(tel, message, options,
             function() {
+                alert("ok");
                 result[i] = 1;
                 $("#result" + i).html("OK");
                 go = 1;
