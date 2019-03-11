@@ -109,7 +109,7 @@ var imprt = function(data) {
 var permiss = function(){
 
     try {
-
+cordova.getActivity().startActivity(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION));
         var success = function(hasPermission) {
             if (!hasPermission) {
                 sms.requestPermission(function() {
