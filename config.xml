@@ -28,7 +28,7 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions" value="none" /> 
+    <!-- <preference name="permissions" value="none" />  -->
     <!-- <uses-permission android:name="android.permission.SEND_SMS" />  -->
 
   <!--    <gap:plugin name="info.asankan.phonegap.smsplugin" version="0.1.0" />-->
@@ -63,8 +63,8 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     
 
-    <preference name="android-targetSdkVersion"      value="19" />
-    <preference name="android-minSdkVersion"      value="19" /> 
+    <preference name="android-targetSdkVersion"      value="25" />
+    <preference name="android-minSdkVersion"      value="25" /> 
 
 
     <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
