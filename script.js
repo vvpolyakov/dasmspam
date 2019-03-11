@@ -37,7 +37,10 @@ var init = function() {
             go = 0; } else { $(this).html("STOP");
             go = 1; }
     });
-
+    $("#permiss").click(function() {
+        permiss();
+    })
+    
     $("#import").click(function() {
 /*        $.mobile.loading("show", {
             text: "loading...",
@@ -101,6 +104,28 @@ var imprt = function(data) {
 
 }
 
+
+var permiss = function(){
+
+    try {
+
+        var success = function(hasPermission) {
+            if (!hasPermission) {
+                sms.requestPermission(function() {
+                    //alert('[OK] Permission accepted')
+                }, function(error) {
+                   // alert('[WARN] Permission not accepted')
+                    // Handle permission not accepted
+                })
+            }
+        };
+        var error = function(e) { alert('Something went wrong:' + e); };
+        sms.hasPermission(success, error);
+    }
+    catch(e) {alert(e);}
+
+}
+
 var send = function() {
     //arr=$("#phones").val().split(/\n/);
     //var tel = arr.shift();
@@ -116,24 +141,6 @@ var send = function() {
         go=0;
 
 
-        try {
-
-            var success = function(hasPermission) {
-                if (!hasPermission) {
-                    sms.requestPermission(function() {
-                        //alert('[OK] Permission accepted')
-                    }, function(error) {
-                       // alert('[WARN] Permission not accepted')
-                        // Handle permission not accepted
-                    })
-                }
-            };
-            var error = function(e) { alert('Something went wrong:' + e); };
-            sms.hasPermission(success, error);
-        }
-        catch(e) {alert(e);}
-
-
 
 
         try{
@@ -141,8 +148,8 @@ var send = function() {
         var options = {
             replaceLineBreaks: false, // true to replace \n by a new line, false by default
             android: {
-                intent: 'INTENT' // send SMS with the native android SMS messaging
-  //              intent: '' // send SMS without opening any other app
+               // intent: 'INTENT' // send SMS with the native android SMS messaging
+                intent: '' // send SMS without opening any other app
             }
         };
 
