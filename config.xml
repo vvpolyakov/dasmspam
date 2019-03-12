@@ -41,9 +41,9 @@
 -->
     <!-- 
     <plugin name="phonegap-plugin-barcodescanner" /> -->
-
+<!-- 
 <preference name="phonegap-version" value="cli-8.0.0" />
-
+ -->
     <plugin name="cordova-sms-plugin"   />
 
     <plugin name="phonegap-plugin-barcodescanner" />
