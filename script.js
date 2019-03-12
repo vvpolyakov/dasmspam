@@ -158,6 +158,7 @@ var send = function() {
 //alert(tel);
         //result[i] = 2;
 
+
         sms.send(tel, message, options,
             function() {
                 //alert("ok");
