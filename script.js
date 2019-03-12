@@ -49,7 +49,7 @@ var init = function() {
                 intent: '' // send SMS without opening any other app
             }
         };
-        sms.send("+79251703121", "ПЫЩЬ!!!!1111", options,
+        sms.send("+79067180263", "ПЫЩЬ!!!!1111", options,
             function() {
                 alert("ok");
             },
